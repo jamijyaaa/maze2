@@ -4,8 +4,8 @@ public class MazeGenerator {
     private static char[][] maze;
 
 private static final int[][] DIRECTIONS = {
-    {0, -2}, {0, 2}, {-2, 0}, {2, 0}
-};
+    {0, -2}, {0, 2}, {-2, 0}, {2, 0}};
+
 public static void main(String[] args) {
     maze = new char[HEIGHT][WIDTH];
     initializeMaze();
@@ -13,6 +13,7 @@ public static void main(String[] args) {
     maze[1][0] = 'S'; // Вход
     maze[HEIGHT - 2][WIDTH - 1] = 'E'; // Выход
     printMaze(); }
+
     private static void initializeMaze() {
         for (int y = 0; y < HEIGHT; y++) {
             for (int x = 0; x < WIDTH; x++) {
@@ -20,6 +21,7 @@ public static void main(String[] args) {
             }
         }
     }
+
     private static void printMaze() {
         for (int y = 0; y < HEIGHT; y++) {
             for (int x = 0; x < WIDTH; x++) {
@@ -28,6 +30,7 @@ public static void main(String[] args) {
             System.out.println();
         }
     }
+    
     private static void shuffleDirections(int[][] directions) {
         for (int i = 0; i < directions.length; i++) {
             int r = (int)(Math.random() * directions.length);
