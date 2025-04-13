@@ -20,3 +20,5 @@ public static void main(String[] args) {
             System.out.println();
         }
     }
+    private static void generateMaze(int x, int y) {
+        maze[y][x] = ' '; }
