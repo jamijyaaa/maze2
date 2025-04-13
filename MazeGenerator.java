@@ -12,3 +12,11 @@ public static void main(String[] args) {
             }
         }
     }
+    private static void printMaze() {
+        for (int y = 0; y < HEIGHT; y++) {
+            for (int x = 0; x < WIDTH; x++) {
+                System.out.print(maze[y][x]);
+            }
+            System.out.println();
+        }
+    }
