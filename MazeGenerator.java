@@ -33,5 +33,18 @@ public static void main(String[] args) {
     }
 
     private static void generateMaze(int x, int y) {
-        maze[y][x] = ' '; }
+        maze[y][x] = ' ';
+        int[][] dirs = DIRECTIONS.clone();
+        shuffleDirections(dirs);
+
+        for (int[] dir : dirs) {
+            int nx = x + dir[0];
+            int ny = y + dir[1];
+
+            if (nx > 0 && nx < WIDTH - 1 && ny > 0 && ny < HEIGHT - 1 && maze[ny][nx] == '#') {
+                maze[ny - dir[1] / 2][nx - dir[0] / 2] = ' ';
+                generateMaze(nx, ny);
+            }
+        }
+    }
     }
