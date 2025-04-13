@@ -7,7 +7,12 @@ private static final int[][] DIRECTIONS = {
     {0, -2}, {0, 2}, {-2, 0}, {2, 0}
 };
 public static void main(String[] args) {
-    maze = new char[HEIGHT][WIDTH]; }
+    maze = new char[HEIGHT][WIDTH];
+    initializeMaze();
+    generateMaze(1, 1); // Начинаем с (1,1)
+    maze[1][0] = 'S'; // Вход
+    maze[HEIGHT - 2][WIDTH - 1] = 'E'; // Выход
+    printMaze(); }
     private static void initializeMaze() {
         for (int y = 0; y < HEIGHT; y++) {
             for (int x = 0; x < WIDTH; x++) {
