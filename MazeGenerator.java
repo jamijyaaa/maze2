@@ -23,6 +23,15 @@ public static void main(String[] args) {
             System.out.println();
         }
     }
+    private static void shuffleDirections(int[][] directions) {
+        for (int i = 0; i < directions.length; i++) {
+            int r = (int)(Math.random() * directions.length);
+            int[] temp = directions[i];
+            directions[i] = directions[r];
+            directions[r] = temp;
+        }
+    }
+
     private static void generateMaze(int x, int y) {
         maze[y][x] = ' '; }
     }
